@@ -82,8 +82,9 @@ To get the face counts for each roll:
 # Die Class API
 Die with N sides, or “faces”, and W weights, and can be rolled to select a face. 
 
-* Attributes:
-** faces - list
+* Attributes
+  - faces : list
+    - a list of type string, float, or int representing faces of a die
 * Methods
 
     def __init__(self, faces):
