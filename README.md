@@ -113,7 +113,7 @@ A game consisting of rolling one or more dice of the same kind one or more times
   - play(n = 1):
     -  Takes a parameter to specify how many times the dice should be rolled, defaulting to 1.
 
-  - show(form = 'wide')::
+  - show(form = 'wide'):
     - Returns the result from playing in a dataframe. Requires calling the play() method first to work.
     - Allows specification of form. Narrow form is a two-column index with the roll number and the die number, and a column for the face rolled. Wide form is a single column index with the roll number, and each die number as a column.
 
