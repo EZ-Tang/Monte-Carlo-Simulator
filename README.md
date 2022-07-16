@@ -15,6 +15,7 @@ A Monte Carlo Simulation with three classes: die, game, and analyzer. In additio
 
     pip install -e .
     
+*Note the period at the end!
 4. If everything is successful, you should see:
 
     Successfully installed Monte-Carlo-Simulation-1.0.0
@@ -30,10 +31,39 @@ This allows you to type in the methods without specifying the package (as the ex
     import montecarlo
 
 But using this will require specifying the montecarlo package whenever a method is needed to be called.
+## Demo
+### Using Die
+To initalize a die (e.g. a regular one with six faces):
 
-# Creating dice
-            Playing games
-            Analyzing games.
+    newDie = Die([1,2,3,4,5,6])
+    
+To change the weight of a die (e.g. change the weight of face '6' to 5.
+
+    newDie.change_weight(6, 5)
+    
+To roll the die (e.g. rolling 8 times):
+
+    newDie.roll(8)
+
+To get the results of the die roll:
+
+    newDie.show()
+    
+### Using Game
+To initalize a game (e.g. with three similar dices):
+
+    newGame = Game([newDie, newDie, newDie])
+
+To play the game (e.g. playing 10 different times):
+
+    newGame.play(10)
+    
+To show the results of the game:
+
+    newGame.show()
+
+# Using Analyzer
+Test
 # API description
         A list of all classes with their public methods and attributes.
         Each item should show their docstrings.
