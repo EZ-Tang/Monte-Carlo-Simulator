@@ -33,11 +33,11 @@ This allows you to type in the methods without specifying the package (as the ex
 But using this will require specifying the montecarlo package whenever a method is needed to be called.
 ## Demo
 ### Using Die
-To initalize a die (e.g. a regular one with six faces):
+To initalize a die (e.g. a regular die with six faces):
 
     newDie = Die([1,2,3,4,5,6])
     
-To change the weight of a die (e.g. change the weight of face '6' to 5.
+To change the weight of a die (e.g. change the weight of face '6' to 5).
 
     newDie.change_weight(6, 5)
     
@@ -63,12 +63,37 @@ To show the results of the game:
     newGame.show()
 
 # Using Analyzer
-Test
-# API description
+To initalize an analyzer with a game:
+
+    newAnalyzer = Analyzer(newGame)
+
+To get the jackpot results from the analysis:
+
+    newAnalyzer.jackpot()
+
+To get the distinct combination of faces rolled:
+
+    newAnalyzer.combo()
+    
+To get the face counts for each roll:
+
+    testAnalyzer.face_counts_per_roll()
+
+# API Description
         A list of all classes with their public methods and attributes.
         Each item should show their docstrings.
         All paramters (with data types and defaults) should be described.
         All return values should be described.
         Do not describe private methods and attributes.
 # Manifest
-        A list of all the files in the repo.
+
+    .gitignore
+    LICENSE
+    README.md
+    montecarlo_demo.ipynb
+    montecarlo_results.txt
+    montecarlo_tests.py
+    setup.py 
+    montecarlo
+        __init__.py
+        montecarlo.py
