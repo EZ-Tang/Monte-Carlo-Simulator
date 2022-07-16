@@ -20,12 +20,11 @@ Congratulations! Now, you're ready to use all this package has to offer.
 To import the three classes into your project, go to your python file and at the top, type in:
             from montecarlo import Die, Game, Analyzer
             
-This allows you to type in the methods without specifying the package (as the example code will demonstrate). This is the recommended way.
-Alternatively, you can simply import the package as so:
+This allows you to type in the methods without specifying the package (as the example code will demonstrate). This is the recommended way, but alternatively, you can simply import the package as so:
             import montecarlo
 But using this will require specifying the montecarlo package whenever a method is needed to be called.
 
-            Creating dice
+# Creating dice
             Playing games
             Analyzing games.
 # API description
