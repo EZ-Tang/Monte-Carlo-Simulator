@@ -79,12 +79,57 @@ To get the face counts for each roll:
 
     testAnalyzer.face_counts_per_roll()
 
-# API Description
+# Die Class API
+Die with N sides, or “faces”, and W weights, and can be rolled to select a face. 
+
+* Attributes:
+** faces - list
+* Methods
+
+    def __init__(self, faces):
+        """     
+        Takes an array of faces as an argument, data type may be strings or numbers.
+        Initializes the weights to 1.0 for each face.
+        Saves both faces and weights into a private dataframe.
+        """
+        self.__df = pd.DataFrame({"face": faces, "weight" : [1.0] * len(faces)})
+
+    def change_weight(self, face, weight):
+        """     
+        Takes two arguments: the face value to be changed and the new weight.
+        Checks if the face passed is valid and if the weight is valid.
+        Changes the weight of a single side.
+        """
+        if face not in self.__df.face.values:
+            raise ValueError("Face value not in list!")
+        if not (isinstance(weight, float) or isinstance(weight, int)):
+            raise TypeError("Weight is not a valid number!")
+        row_index = self.__df.index[self.__df['face'] == face]
+        self.__df.loc[row_index, 'weight'] = weight
+
+    def roll(self, r = 1):
+        """
+        Takes a parameter of how many times the die is to be rolled; defaults to 1. 
+        Essentially a random sample from the vector of faces according to the weights.
+        Returns a list of outcomes
+        """
+        return (self.__df['face'].sample(n = r, weights = self.__df['weight'], replace = True)).tolist()
+
+    def show(self):
+        """
+        Returns  the die's current set of faces and weights
+        """
+        return self.__df
+
         A list of all classes with their public methods and attributes.
         Each item should show their docstrings.
         All paramters (with data types and defaults) should be described.
         All return values should be described.
         Do not describe private methods and attributes.
+# Game API
+
+
+# Analyzer API
 # Manifest
 
     .gitignore
@@ -94,6 +139,6 @@ To get the face counts for each roll:
     montecarlo_results.txt
     montecarlo_tests.py
     setup.py 
-    montecarlo
+    montecarlo\
         __init__.py
         montecarlo.py
